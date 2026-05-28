@@ -41,7 +41,7 @@
     "id": "textbook_dilemma",
     "title": "Textbook Dilemma",
     "narrative": "The lecturer recommends an expensive textbook. The library has only two copies, both already taken. Your bank account looks nervous.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [1, 4],
     "choices": [
       {
@@ -65,7 +65,7 @@
     "id": "first_campus_party",
     "title": "First Campus Party",
     "narrative": "A classmate invites you to a campus party. You barely know anyone, but everyone says this is how friendships start.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [1, 5],
     "choices": [
       {
@@ -108,7 +108,7 @@
     "id": "study_group_invite",
     "title": "Study Group Invite",
     "narrative": "Some classmates are forming a study group. They seem motivated, organized, and slightly intimidating.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [2, 6],
     "choices": [
       {
@@ -156,7 +156,7 @@
     "id": "forgotten_assignment",
     "title": "Forgotten Assignment",
     "narrative": "You open the course platform and discover an assignment due tonight. You have no memory of this task existing.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [3, 7],
     "choices": [
       {
@@ -204,7 +204,7 @@
     "id": "library_or_cafe",
     "title": "Library or Café?",
     "narrative": "You planned to study, but a friend suggests working together at a café. The library is free and quiet. The café has cake.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [4, 8],
     "choices": [
       {
@@ -228,7 +228,7 @@
     "id": "club_fair",
     "title": "Student Club Fair",
     "narrative": "The campus is full of stands, flyers, free pens, and students passionately explaining hobbies you did not know existed.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [4, 8],
     "choices": [
       {
@@ -300,7 +300,7 @@
     "id": "group_project_roles",
     "title": "Group Project Roles",
     "narrative": "Your group project begins. Everyone agrees to divide the work equally, which is usually student code for 'someone will suffer later'.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [6, 10],
     "choices": [
       {
@@ -324,7 +324,7 @@
     "id": "friend_needs_help",
     "title": "Friend Needs Help",
     "narrative": "A friend messages you saying they are overwhelmed and need someone to talk to. You were about to study.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [6, 11],
     "choices": [
       {
@@ -372,7 +372,7 @@
     "id": "presentation_prep",
     "title": "Presentation Prep",
     "narrative": "A presentation is coming up. The slides technically exist, but several of them are just titles and a stock photo of people pointing at a graph.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [7, 11],
     "choices": [
       {
@@ -396,7 +396,7 @@
     "id": "rainy_commute",
     "title": "Rainy Commute",
     "narrative": "It is raining heavily. You have class soon, and the bus is late. The universe is testing your commitment to education.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [7, 13],
     "choices": [
       {
@@ -444,7 +444,7 @@
     "id": "midterm_results",
     "title": "Midterm Results",
     "narrative": "Midterm results are published. Your classmates are reacting with celebration, panic, or suspicious silence.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [8, 10],
     "choices": [
       {
@@ -492,7 +492,7 @@
     "id": "group_conflict",
     "title": "Group Conflict",
     "narrative": "Two members of your group project start arguing in the chat. The deadline is close, and the document is still unfinished.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [9, 13],
     "choices": [
       {
@@ -516,7 +516,7 @@
     "id": "career_talk",
     "title": "Career Talk",
     "narrative": "There is a career talk on campus. It sounds useful, but also like one of those events where everyone pretends to have a five-year plan.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [10, 14],
     "choices": [
       {
@@ -564,7 +564,7 @@
     "id": "friendship_drift",
     "title": "Friendship Drift",
     "narrative": "You realize you have barely spoken to some friends in weeks. Everyone is busy, but the distance is starting to feel real.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [11, 15],
     "choices": [
       {
@@ -641,7 +641,7 @@
     "id": "internship_application",
     "title": "Internship Application",
     "narrative": "An internship application deadline appears. It could be great for your future, but your semester is already overloaded.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [12, 15],
     "choices": [
       {
@@ -665,7 +665,7 @@
     "id": "end_of_semester_party",
     "title": "End-of-Semester Party",
     "narrative": "Exams are almost over, and everyone is talking about one final party. You are tired, broke, and tempted.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [14, 15],
     "choices": [
       {
@@ -760,7 +760,7 @@
     "id": "grades_crisis_academic_warning",
     "title": "Academic Warning",
     "narrative": "An email from your lecturer appears with the subject line: 'Concern about your progress'. Your soul briefly leaves your body.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [6, 15],
     "type": "injector",
     "condition": { "stat": "grades", "below": 25 },
@@ -838,7 +838,7 @@
     "id": "grades_high_scholarship",
     "title": "Scholarship Opportunity",
     "narrative": "Your strong academic performance makes you eligible for a small scholarship application. The deadline is soon.",
-    "scenario": "university",
+    "scenario": "class",
     "weekRange": [8, 15],
     "type": "injector",
     "condition": { "stat": "grades", "above": 80 },
@@ -864,7 +864,7 @@
     "id": "social_high_support_network",
     "title": "Support Network",
     "narrative": "Because you have stayed connected, your friends notice when you seem stressed. One of them offers to help before you even ask.",
-    "scenario": "social",
+    "scenario": "party",
     "weekRange": [7, 15],
     "type": "injector",
     "condition": { "stat": "social", "above": 80 },
