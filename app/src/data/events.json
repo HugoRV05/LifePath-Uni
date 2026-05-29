@@ -1,171 +1,20 @@
 [
   {
-    "id": "silent_grind",
-    "title": "The Silent Grind",
-    "narrative": "You've been studying in the library for 3 hours straight. Your brain is fogging up and your phone keeps buzzing with messages from friends heading out tonight.",
-    "scenario": "library",
-    "weekRange": [1, 15],
-    "tags": ["academic"],
-    "choices": [
-      {
-        "text": "Keep studying",
-        "outcome": "You push through the exhaustion and finish your notes. It's not fun, but you feel slightly more prepared. Your phone goes silent.",
-        "effects": { "health": -5, "money": 0, "grades": 10, "social": -5 }
-      },
-      {
-        "text": "Leave and meet friends",
-        "outcome": "You close your laptop and head out. The relief is instant. You'll deal with the consequences later... hopefully.",
-        "effects": { "health": 3, "money": -5, "grades": -5, "social": 10 }
-      }
-    ]
-  },
-  {
-    "id": "group_project",
-    "title": "The Group Project",
-    "narrative": "Your group project is due tomorrow and your teammates haven't done their parts. The shared doc is painfully empty. Your phone shows three unread messages from them, all excuses.",
-    "scenario": "library",
-    "weekRange": [3, 15],
-    "tags": ["academic", "social"],
-    "choices": [
-      {
-        "text": "Do everything yourself",
-        "outcome": "You stay up all night fixing everything. The project is solid, but you feel completely drained. At least your name is on something decent.",
-        "effects": { "health": -10, "money": 0, "grades": 12, "social": -3 }
-      },
-      {
-        "text": "Confront the group",
-        "outcome": "You send a brutally honest message calling them out. It's awkward, but now the responsibility is shared... kind of.",
-        "effects": { "health": -2, "money": 0, "grades": 3, "social": -5 }
-      },
-      {
-        "text": "Tell the professor",
-        "outcome": "You email the professor explaining the situation. They appreciate your honesty but the grade still depends on the final product.",
-        "effects": { "health": 0, "money": 0, "grades": 5, "social": -8 }
-      },
-      {
-        "text": "Do nothing and hope for the best",
-        "outcome": "You close the laptop and go to bed. Tomorrow you can deal with this. Tomorrow you is going to be very stressed.",
-        "effects": { "health": 5, "money": 0, "grades": -10, "social": 0 }
-      }
-    ]
-  },
-  {
-    "id": "basement_party",
-    "title": "Basement Party",
-    "narrative": "You're at a packed basement party. Music is deafening, drinks are everywhere, and someone just started a very competitive game of beer pong. You have a 9AM class tomorrow.",
-    "scenario": "party",
-    "weekRange": [1, 15],
-    "tags": ["social", "leisure"],
-    "choices": [
-      {
-        "text": "Stay and own the night",
-        "outcome": "You lose track of time completely. It's 4AM before you realize it. Tomorrow is going to hurt, but tonight was legendary.",
-        "effects": { "health": -8, "money": -5, "grades": -5, "social": 12 }
-      },
-      {
-        "text": "Leave early",
-        "outcome": "You say your goodbyes and head home while people boo you playfully. You feel responsible but also a bit lame.",
-        "effects": { "health": 3, "money": 0, "grades": 0, "social": -5 }
-      }
-    ]
-  },
-  {
-    "id": "morning_lecture",
-    "title": "The Morning Lecture",
-    "narrative": "Your alarm is screaming. It's 7:45AM and your lecture starts in 15 minutes. Your bed has never been more comfortable. The attendance sheet is definitely going to be out today.",
-    "scenario": "class",
-    "weekRange": [1, 15],
-    "tags": ["academic"],
-    "choices": [
-      {
-        "text": "Drag yourself to class",
-        "outcome": "You make it with seconds to spare, hair a mess, no coffee. But you're there. The professor definitely noticed you stumbling in.",
-        "effects": { "health": -3, "money": 0, "grades": 8, "social": 0 }
-      },
-      {
-        "text": "Skip and sleep in",
-        "outcome": "You silence the alarm and drift back into the most satisfying sleep of your life. You'll get the notes from someone. Probably.",
-        "effects": { "health": 5, "money": 0, "grades": -8, "social": 0 }
-      }
-    ]
-  },
-  {
-    "id": "coffee_habit",
-    "title": "Coffee Habit",
-    "narrative": "You walk past your favourite campus café and the smell of fresh espresso hits you like a freight train. Your wallet says no, your exhausted brain says absolutely yes.",
-    "scenario": "cafe",
-    "weekRange": [1, 15],
-    "tags": ["frugal", "leisure"],
-    "choices": [
-      {
-        "text": "Treat yourself",
-        "outcome": "That first sip hits different. You feel alive again. Your bank account feels slightly less alive.",
-        "effects": { "health": 2, "money": -5, "grades": 3, "social": 0 }
-      },
-      {
-        "text": "Walk past",
-        "outcome": "You keep walking. The willpower is admirable. The headache is not.",
-        "effects": { "health": -2, "money": 3, "grades": 0, "social": 0 }
-      }
-    ]
-  },
-  {
-    "id": "late_night_scroll",
-    "title": "Late Night Scroll",
-    "narrative": "It's midnight. You're in bed, phone inches from your face, deep in a TikTok spiral. You have stuff to do tomorrow. You've had stuff to do tomorrow for the last three hours.",
+    "id": "first_morning_lecture",
+    "title": "First Morning Lecture",
+    "narrative": "Your alarm goes off at 7:30 AM. The first real lecture of the semester starts in forty minutes, and your bed suddenly feels like the safest place on Earth.",
     "scenario": "dorm",
-    "weekRange": [1, 15],
-    "tags": ["health", "leisure"],
+    "weekRange": [1, 3],
     "choices": [
       {
-        "text": "Keep scrolling",
-        "outcome": "One more video turns into forty seven. It's 2AM. You've learned nothing useful but you can now identify every dog breed by sound.",
-        "effects": { "health": -5, "money": 0, "grades": -3, "social": 2 }
+      "text": "Get up and attend",
+      "outcome": "You arrive slightly sleepy but on time. The lecturer explains how the module works, and you feel like you actually know what's happening.",
+      "effects": { "health": -2, "money": 0, "grades": 6, "social": 1 }
       },
       {
-        "text": "Put the phone down and sleep",
-        "outcome": "You force yourself to lock the phone and close your eyes. Tomorrow you will be grateful. Tonight you is mildly annoyed.",
-        "effects": { "health": 5, "money": 0, "grades": 2, "social": 0 }
-      }
-    ]
-  },
-  {
-    "id": "part_time_offer",
-    "title": "Part Time Job Offer",
-    "narrative": "Your manager at the campus bookstore texts: they need you for extra shifts this week. The pay is decent, but your assignment deadlines are already breathing down your neck.",
-    "scenario": "cafe",
-    "weekRange": [2, 14],
-    "tags": ["frugal", "crisis"],
-    "choices": [
-      {
-        "text": "Accept the extra hours",
-        "outcome": "More money, less time. Your wallet thanks you. Your GPA has some concerns.",
-        "effects": { "health": -3, "money": 12, "grades": -8, "social": -2 }
-      },
-      {
-        "text": "Decline and focus on uni",
-        "outcome": "You text back 'sorry, can't this week.' Smart move academically. Your bank balance whimpers quietly.",
-        "effects": { "health": 2, "money": -3, "grades": 5, "social": 0 }
-      }
-    ]
-  },
-  {
-    "id": "peer_pressure",
-    "title": "Peer Pressure",
-    "narrative": "Someone hands you another drink at a house party. You've already had a few and things are getting fuzzy. Everyone's watching to see if you'll take it.",
-    "scenario": "party",
-    "weekRange": [2, 15],
-    "tags": ["social", "health"],
-    "choices": [
-      {
-        "text": "Take it",
-        "outcome": "Everyone cheers. You feel included, part of the tribe. The room is spinning slightly but the vibes are immaculate.",
-        "effects": { "health": -8, "money": 0, "grades": 0, "social": 8 }
-      },
-      {
-        "text": "Pass",
-        "outcome": "You wave it off. A couple people tease you but most don't even notice. You feel clearheaded and quietly proud.",
-        "effects": { "health": 3, "money": 0, "grades": 0, "social": -3 }
+      "text": "Sleep a bit longer",
+      "outcome": "You wake up two hours later with three unread messages and a vague sense of academic guilt.",
+      "effects": { "health": 4, "money": 0, "grades": -5, "social": -1 }
       }
     ]
   },
@@ -175,47 +24,688 @@
     "narrative": "Your room looks like a crime scene. Clothes everywhere, empty cups forming a small civilization on your desk, and something in the bin that should have been taken out days ago.",
     "scenario": "dorm",
     "weekRange": [1, 15],
-    "tags": ["health"],
     "choices": [
       {
-        "text": "Clean up",
-        "outcome": "It takes an hour, but your space transforms. You can see the desk again. Your mental clarity improves almost immediately.",
-        "effects": { "health": 5, "money": 0, "grades": 2, "social": 0 }
+      "text": "Clean up",
+      "outcome": "It takes an hour, but your space transforms. You can see the desk again. Your mental clarity improves almost immediately.",
+      "effects": { "health": 5, "money": 0, "grades": 2, "social": 0 }
       },
       {
-        "text": "Step over the mess",
-        "outcome": "You navigate the obstacle course that is your floor and carry on. It's fine. Everything is fine. The smell will go away on its own. Probably.",
-        "effects": { "health": -3, "money": 0, "grades": -2, "social": 0 }
+      "text": "Step over the mess",
+      "outcome": "You navigate the obstacle course that is your floor and carry on. It's fine. Everything is fine. The smell will go away on its own. Probably.",
+      "effects": { "health": -3, "money": 0, "grades": -2, "social": 0 }
       }
     ]
   },
   {
-    "id": "pop_quiz",
-    "title": "Pop Quiz",
-    "narrative": "The professor walks in with that look on their face. 'Clear your desks, surprise quiz.' You haven't reviewed the material in two weeks. Your neighbour is already writing.",
+    "id": "textbook_dilemma",
+    "title": "Textbook Dilemma",
+    "narrative": "The lecturer recommends an expensive textbook. The library has only two copies, both already taken. Your bank account looks nervous.",
     "scenario": "class",
-    "weekRange": [3, 13],
-    "tags": ["academic"],
+    "weekRange": [1, 4],
     "choices": [
       {
-        "text": "Give it your best shot",
-        "outcome": "You write down everything you vaguely remember. It's not pretty, but at least you tried. Partial credit is a thing, right?",
-        "effects": { "health": -2, "money": 0, "grades": 5, "social": 0 }
+      "text": "Buy the textbook",
+      "outcome": "Your wallet suffers, but you now have access to all the recommended material.",
+      "effects": { "health": 0, "money": -12, "grades": 7, "social": 0 }
       },
       {
-        "text": "Glance at your neighbour's paper",
-        "outcome": "You subtly lean over. You pick up a few answers. The guilt settles in immediately, but at least the quiz won't be a zero.",
-        "effects": { "health": -2, "money": 0, "grades": 8, "social": -3 }
+      "text": "Use online summaries",
+      "outcome": "You find some decent notes online. They are not perfect, but they get the job done for now.",
+      "effects": { "health": 0, "money": 0, "grades": 2, "social": 0 }
       },
       {
-        "text": "Hand it in mostly blank",
-        "outcome": "You write your name, stare at the ceiling for ten minutes, and accept your fate. At least it's over fast.",
-        "effects": { "health": 0, "money": 0, "grades": -8, "social": 0 }
+      "text": "Ignore it for now",
+      "outcome": "Future you will deal with it. Future you is already tired.",
+      "effects": { "health": 1, "money": 0, "grades": -4, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "first_campus_party",
+    "title": "First Campus Party",
+    "narrative": "A classmate invites you to a campus party. You barely know anyone, but everyone says this is how friendships start.",
+    "scenario": "party",
+    "weekRange": [1, 5],
+    "choices": [
+      {
+      "text": "Go to the party",
+      "outcome": "You meet new people, laugh more than expected, and return home late but socially recharged.",
+      "effects": { "health": -4, "money": -6, "grades": -1, "social": 9 }
       },
       {
-        "text": "Pretend to be sick and leave",
-        "outcome": "You grab your stomach, mutter something about food poisoning, and shuffle out. The professor looks skeptical. You'll need a doctor's note.",
-        "effects": { "health": -2, "money": -5, "grades": -3, "social": -2 }
+      "text": "Stay in and rest",
+      "outcome": "You sleep early and wake up feeling human. Your social life, however, remains a loading screen.",
+      "effects": { "health": 6, "money": 0, "grades": 1, "social": -3 }
+      }
+    ]
+  },
+  {
+    "id": "cheap_groceries",
+    "title": "Cheap Groceries",
+    "narrative": "You are at the supermarket deciding between actual nutritious food and the legendary student combo: noodles, instant coffee, and biscuits.",
+    "scenario": "cafe",
+    "weekRange": [1, 6],
+    "choices": [
+      {
+      "text": "Buy healthy groceries",
+      "outcome": "It costs more, but your body thanks you. You even feel like a responsible adult for approximately twelve minutes.",
+      "effects": { "health": 7, "money": -8, "grades": 1, "social": 0 }
+      },
+      {
+      "text": "Buy the cheapest food possible",
+      "outcome": "Financially efficient. Nutritionally questionable. Your dinner has the emotional depth of cardboard.",
+      "effects": { "health": -5, "money": 4, "grades": 0, "social": 0 }
+      },
+      {
+      "text": "Order takeaway",
+      "outcome": "The food arrives fast and delicious. Your budget cries silently in the corner.",
+      "effects": { "health": -1, "money": -10, "grades": 0, "social": 2 }
+      }
+    ]
+  },
+  {
+    "id": "study_group_invite",
+    "title": "Study Group Invite",
+    "narrative": "Some classmates are forming a study group. They seem motivated, organized, and slightly intimidating.",
+    "scenario": "class",
+    "weekRange": [2, 6],
+    "choices": [
+      {
+      "text": "Join the study group",
+      "outcome": "The session is useful and you finally understand a topic that looked like ancient magic yesterday.",
+      "effects": { "health": -2, "money": 0, "grades": 7, "social": 5 }
+      },
+      {
+      "text": "Study alone",
+      "outcome": "You make progress at your own pace, although you occasionally explain concepts to your desk lamp.",
+      "effects": { "health": 0, "money": 0, "grades": 4, "social": -1 }
+      },
+      {
+      "text": "Skip studying today",
+      "outcome": "A peaceful evening. Academically dangerous, but peaceful.",
+      "effects": { "health": 4, "money": 0, "grades": -5, "social": 1 }
+      }
+    ]
+  },
+  {
+    "id": "part_time_job_offer",
+    "title": "Part-Time Job Offer",
+    "narrative": "A local café is hiring students for evening shifts. The money would help, but your schedule is already starting to look cursed.",
+    "scenario": "work",
+    "weekRange": [2, 7],
+    "choices": [
+      {
+      "text": "Accept regular shifts",
+      "outcome": "You secure extra income, but your free time immediately disappears into the void.",
+      "effects": { "health": -6, "money": 12, "grades": -3, "social": -3 }
+      },
+      {
+      "text": "Accept only weekend shifts",
+      "outcome": "You find a compromise. It is not perfect, but at least your calendar does not scream.",
+      "effects": { "health": -3, "money": 7, "grades": -1, "social": -1 }
+      },
+      {
+      "text": "Decline the offer",
+      "outcome": "You protect your time and energy, but your bank account remains suspiciously quiet.",
+      "effects": { "health": 3, "money": -3, "grades": 2, "social": 1 }
+      }
+    ]
+  },
+  {
+    "id": "forgotten_assignment",
+    "title": "Forgotten Assignment",
+    "narrative": "You open the course platform and discover an assignment due tonight. You have no memory of this task existing.",
+    "scenario": "class",
+    "weekRange": [3, 7],
+    "choices": [
+      {
+      "text": "Rush and submit something",
+      "outcome": "It is not your best work, but it exists. Sometimes existence is enough.",
+      "effects": { "health": -6, "money": 0, "grades": 3, "social": -1 }
+      },
+      {
+      "text": "Ask for an extension",
+      "outcome": "The lecturer grants you two extra days. You feel both relieved and mildly ashamed.",
+      "effects": { "health": -1, "money": 0, "grades": 2, "social": 0 }
+      },
+      {
+      "text": "Ignore it",
+      "outcome": "Bold strategy. The gradebook will remember this.",
+      "effects": { "health": 2, "money": 0, "grades": -8, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "roommate_noise",
+    "title": "Roommate Noise",
+    "narrative": "Your roommate decides that midnight is the perfect time to reorganize furniture, cook loudly, and discover a new playlist.",
+    "scenario": "dorm",
+    "weekRange": [3, 8],
+    "choices": [
+      {
+      "text": "Talk to them calmly",
+      "outcome": "The conversation is awkward but productive. They apologize and promise to be quieter.",
+      "effects": { "health": 3, "money": 0, "grades": 1, "social": 3 }
+      },
+      {
+      "text": "Say nothing and suffer",
+      "outcome": "You stare at the ceiling while someone aggressively opens cupboards in the kitchen.",
+      "effects": { "health": -6, "money": 0, "grades": -2, "social": -2 }
+      },
+      {
+      "text": "Send a passive-aggressive message",
+      "outcome": "The message is technically polite, but the vibes are radioactive.",
+      "effects": { "health": -2, "money": 0, "grades": 0, "social": -5 }
+      }
+    ]
+  },
+  {
+    "id": "library_or_cafe",
+    "title": "Library or Café?",
+    "narrative": "You planned to study, but a friend suggests working together at a café. The library is free and quiet. The café has cake.",
+    "scenario": "class",
+    "weekRange": [4, 8],
+    "choices": [
+      {
+      "text": "Go to the library",
+      "outcome": "You focus well and get through your notes. The silence is powerful, almost suspicious.",
+      "effects": { "health": -1, "money": 0, "grades": 6, "social": -1 }
+      },
+      {
+      "text": "Go to the café",
+      "outcome": "You study a little, chat a lot, and accidentally buy a pastry called 'academic motivation'.",
+      "effects": { "health": 1, "money": -5, "grades": 3, "social": 5 }
+      },
+      {
+      "text": "Stay home",
+      "outcome": "You technically study, but your bed keeps trying to recruit you.",
+      "effects": { "health": 2, "money": 0, "grades": 1, "social": -2 }
+      }
+    ]
+  },
+  {
+    "id": "club_fair",
+    "title": "Student Club Fair",
+    "narrative": "The campus is full of stands, flyers, free pens, and students passionately explaining hobbies you did not know existed.",
+    "scenario": "party",
+    "weekRange": [4, 8],
+    "choices": [
+      {
+      "text": "Join a club",
+      "outcome": "You sign up for one activity and meet people outside your course. Your week just became busier, but also more interesting.",
+      "effects": { "health": 0, "money": -2, "grades": -1, "social": 8 }
+      },
+      {
+      "text": "Collect free stuff and leave",
+      "outcome": "You escape with three pens, a tote bag, and no new commitments.",
+      "effects": { "health": 1, "money": 1, "grades": 0, "social": 1 }
+      },
+      {
+      "text": "Avoid the crowd",
+      "outcome": "You take the long route around campus. Peaceful, but a little isolating.",
+      "effects": { "health": 2, "money": 0, "grades": 0, "social": -4 }
+      }
+    ]
+  },
+  {
+    "id": "midterm_revision",
+    "title": "Midterm Revision",
+    "narrative": "Midterms are approaching. Your notes are scattered across notebooks, slides, screenshots, and one mysterious document named 'final_final_real_notes.docx'.",
+    "scenario": "library",
+    "weekRange": [5, 8],
+    "choices": [
+      {
+      "text": "Make a study plan",
+      "outcome": "You organize everything into a realistic plan. For once, chaos fears you.",
+      "effects": { "health": 1, "money": 0, "grades": 8, "social": 0 }
+      },
+      {
+      "text": "Cram randomly",
+      "outcome": "You study intensely but inefficiently. Some knowledge enters your brain. Some simply waves goodbye.",
+      "effects": { "health": -6, "money": 0, "grades": 4, "social": -2 }
+      },
+      {
+      "text": "Pretend there is still time",
+      "outcome": "There is technically still time. There is also technically a storm approaching.",
+      "effects": { "health": 3, "money": 0, "grades": -6, "social": 1 }
+      }
+    ]
+  },
+  {
+    "id": "extra_shift_request",
+    "title": "Extra Shift Request",
+    "narrative": "Your manager asks if you can cover an extra shift this week. You could use the money, but you had planned to catch up on coursework.",
+    "scenario": "work",
+    "weekRange": [5, 10],
+    "choices": [
+      {
+      "text": "Take the shift",
+      "outcome": "The money helps, but you leave work exhausted and with unread lecture notes staring at you.",
+      "effects": { "health": -7, "money": 14, "grades": -5, "social": -2 }
+      },
+      {
+      "text": "Refuse politely",
+      "outcome": "You protect your study time. Your manager understands, although your wallet does not.",
+      "effects": { "health": 3, "money": -2, "grades": 5, "social": 0 }
+      },
+      {
+      "text": "Ask to do a shorter shift",
+      "outcome": "You compromise and survive the week with only moderate emotional damage.",
+      "effects": { "health": -3, "money": 7, "grades": -1, "social": -1 }
+      }
+    ]
+  },
+  {
+    "id": "group_project_roles",
+    "title": "Group Project Roles",
+    "narrative": "Your group project begins. Everyone agrees to divide the work equally, which is usually student code for 'someone will suffer later'.",
+    "scenario": "class",
+    "weekRange": [6, 10],
+    "choices": [
+      {
+      "text": "Take leadership",
+      "outcome": "You organize the team and set deadlines. It is stressful, but the project finally has direction.",
+      "effects": { "health": -6, "money": 0, "grades": 8, "social": 2 }
+      },
+      {
+      "text": "Do only your assigned part",
+      "outcome": "You complete your section and hope everyone else does the same. Hope is not a project management tool, but here we are.",
+      "effects": { "health": 0, "money": 0, "grades": 3, "social": 0 }
+      },
+      {
+      "text": "Stay quiet and avoid responsibility",
+      "outcome": "Nobody asks much of you. Unfortunately, nobody trusts you much either.",
+      "effects": { "health": 2, "money": 0, "grades": -4, "social": -4 }
+      }
+    ]
+  },
+  {
+    "id": "friend_needs_help",
+    "title": "Friend Needs Help",
+    "narrative": "A friend messages you saying they are overwhelmed and need someone to talk to. You were about to study.",
+    "scenario": "party",
+    "weekRange": [6, 11],
+    "choices": [
+      {
+      "text": "Meet them and listen",
+      "outcome": "You lose study time, but your friend clearly needed support. The conversation matters.",
+      "effects": { "health": -2, "money": -3, "grades": -3, "social": 8 }
+      },
+      {
+      "text": "Send a supportive message",
+      "outcome": "It is not as meaningful as meeting in person, but it still helps.",
+      "effects": { "health": 0, "money": 0, "grades": -1, "social": 3 }
+      },
+      {
+      "text": "Ignore the message for now",
+      "outcome": "You focus on your work, but the unread message sits there like a tiny emotional debt.",
+      "effects": { "health": -1, "money": 0, "grades": 4, "social": -6 }
+      }
+    ]
+  },
+  {
+    "id": "unexpected_bill",
+    "title": "Unexpected Bill",
+    "narrative": "An unexpected bill appears. It is not huge, but it is exactly large enough to ruin your weekly budget.",
+    "scenario": "dorm",
+    "weekRange": [6, 12],
+    "choices": [
+      {
+      "text": "Pay it immediately",
+      "outcome": "Painful but responsible. Your finances take a hit, but the problem is gone.",
+      "effects": { "health": -2, "money": -12, "grades": 0, "social": 0 }
+      },
+      {
+      "text": "Delay payment",
+      "outcome": "You buy yourself some time, but the stress follows you around like a small angry cloud.",
+      "effects": { "health": -6, "money": -4, "grades": -2, "social": 0 }
+      },
+      {
+      "text": "Ask someone to split the cost",
+      "outcome": "After an awkward conversation, someone agrees to help cover part of it.",
+      "effects": { "health": -1, "money": -6, "grades": 0, "social": -2 }
+      }
+    ]
+  },
+  {
+    "id": "presentation_prep",
+    "title": "Presentation Prep",
+    "narrative": "A presentation is coming up. The slides technically exist, but several of them are just titles and a stock photo of people pointing at a graph.",
+    "scenario": "class",
+    "weekRange": [7, 11],
+    "choices": [
+      {
+      "text": "Rehearse properly",
+      "outcome": "You practice, fix weak slides, and feel almost professional.",
+      "effects": { "health": -3, "money": 0, "grades": 8, "social": 1 }
+      },
+      {
+      "text": "Wing it",
+      "outcome": "You rely on charisma, caffeine, and the hope that nobody asks questions.",
+      "effects": { "health": 1, "money": 0, "grades": -3, "social": 1 }
+      },
+      {
+      "text": "Ask your group to help",
+      "outcome": "The group actually contributes. A rare academic miracle.",
+      "effects": { "health": 1, "money": 0, "grades": 5, "social": 4 }
+      }
+    ]
+  },
+  {
+    "id": "rainy_commute",
+    "title": "Rainy Commute",
+    "narrative": "It is raining heavily. You have class soon, and the bus is late. The universe is testing your commitment to education.",
+    "scenario": "class",
+    "weekRange": [7, 13],
+    "choices": [
+      {
+      "text": "Go anyway",
+      "outcome": "You arrive wet, cold, and academically present. A heroic but damp victory.",
+      "effects": { "health": -5, "money": -2, "grades": 5, "social": 0 }
+      },
+      {
+      "text": "Stay home and study online",
+      "outcome": "You miss the live discussion but catch up with recordings and notes.",
+      "effects": { "health": 3, "money": 0, "grades": 2, "social": -1 }
+      },
+      {
+      "text": "Use a rideshare",
+      "outcome": "You arrive on time and dry. Your budget, however, has been personally attacked.",
+      "effects": { "health": 1, "money": -9, "grades": 5, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "mental_health_day",
+    "title": "Mental Health Day",
+    "narrative": "You wake up exhausted in a way sleep does not fully explain. The day ahead feels heavier than usual.",
+    "scenario": "dorm",
+    "weekRange": [8, 13],
+    "choices": [
+      {
+      "text": "Take a proper rest day",
+      "outcome": "You cancel non-essential plans, rest, and feel more stable by evening.",
+      "effects": { "health": 9, "money": 0, "grades": -3, "social": -1 }
+      },
+      {
+      "text": "Push through everything",
+      "outcome": "You get things done, but it feels like running a laptop at 2 percent battery.",
+      "effects": { "health": -8, "money": 0, "grades": 4, "social": -2 }
+      },
+      {
+      "text": "Talk to someone",
+      "outcome": "Opening up is uncomfortable, but it helps. You feel less alone.",
+      "effects": { "health": 6, "money": 0, "grades": 0, "social": 5 }
+      }
+    ]
+  },
+  {
+    "id": "midterm_results",
+    "title": "Midterm Results",
+    "narrative": "Midterm results are published. Your classmates are reacting with celebration, panic, or suspicious silence.",
+    "scenario": "class",
+    "weekRange": [8, 10],
+    "choices": [
+      {
+      "text": "Review your mistakes",
+      "outcome": "You identify what went wrong and make a plan to improve. Painful, but useful.",
+      "effects": { "health": -1, "money": 0, "grades": 7, "social": 0 }
+      },
+      {
+      "text": "Compare yourself to everyone",
+      "outcome": "You learn very little academically, but become an expert in unnecessary stress.",
+      "effects": { "health": -7, "money": 0, "grades": -1, "social": -3 }
+      },
+      {
+      "text": "Celebrate surviving",
+      "outcome": "Regardless of the mark, you made it through. That deserves something small.",
+      "effects": { "health": 3, "money": -5, "grades": 0, "social": 4 }
+      }
+    ]
+  },
+  {
+    "id": "family_call",
+    "title": "Family Call",
+    "narrative": "Your family calls to ask how university is going. They mean well, but every question sounds like a performance review.",
+    "scenario": "dorm",
+    "weekRange": [9, 13],
+    "choices": [
+      {
+      "text": "Be honest",
+      "outcome": "You admit things have been difficult. The conversation is emotional, but supportive.",
+      "effects": { "health": 5, "money": 0, "grades": 0, "social": 3 }
+      },
+      {
+      "text": "Say everything is fine",
+      "outcome": "You keep the call short and cheerful. Afterwards, you feel strangely alone.",
+      "effects": { "health": -4, "money": 0, "grades": 0, "social": -3 }
+      },
+      {
+      "text": "Ask for financial help",
+      "outcome": "They help, but not without a long discussion about responsibility.",
+      "effects": { "health": -2, "money": 12, "grades": 0, "social": -1 }
+      }
+    ]
+  },
+  {
+    "id": "group_conflict",
+    "title": "Group Conflict",
+    "narrative": "Two members of your group project start arguing in the chat. The deadline is close, and the document is still unfinished.",
+    "scenario": "class",
+    "weekRange": [9, 13],
+    "choices": [
+      {
+      "text": "Mediate the conflict",
+      "outcome": "You calm things down and get everyone moving again, though it costs you patience you did not know you had.",
+      "effects": { "health": -5, "money": 0, "grades": 6, "social": 4 }
+      },
+      {
+      "text": "Do the missing work yourself",
+      "outcome": "The project improves, but resentment quietly moves into your soul.",
+      "effects": { "health": -8, "money": 0, "grades": 8, "social": -3 }
+      },
+      {
+      "text": "Let them sort it out",
+      "outcome": "They do not sort it out. Shocking development.",
+      "effects": { "health": 1, "money": 0, "grades": -7, "social": -2 }
+      }
+    ]
+  },
+  {
+    "id": "career_talk",
+    "title": "Career Talk",
+    "narrative": "There is a career talk on campus. It sounds useful, but also like one of those events where everyone pretends to have a five-year plan.",
+    "scenario": "class",
+    "weekRange": [10, 14],
+    "choices": [
+      {
+      "text": "Attend the talk",
+      "outcome": "You learn about internships and leave with slightly more direction than before.",
+      "effects": { "health": -1, "money": 0, "grades": 3, "social": 3 }
+      },
+      {
+      "text": "Skip it and study",
+      "outcome": "You make academic progress, but miss a chance to think about life after exams.",
+      "effects": { "health": 0, "money": 0, "grades": 5, "social": -1 }
+      },
+      {
+      "text": "Go only for the free snacks",
+      "outcome": "You eat three pastries and accidentally learn something about employability.",
+      "effects": { "health": -1, "money": 1, "grades": 1, "social": 2 }
+      }
+    ]
+  },
+  {
+    "id": "final_project_deadline",
+    "title": "Final Project Deadline",
+    "narrative": "The final project deadline is approaching. The file names in your folder suggest a tragic history of panic revisions.",
+    "scenario": "library",
+    "weekRange": [11, 14],
+    "choices": [
+      {
+      "text": "Start early and polish it",
+      "outcome": "You work steadily and submit something you are genuinely proud of.",
+      "effects": { "health": -4, "money": 0, "grades": 10, "social": -1 }
+      },
+      {
+      "text": "Work in one intense night",
+      "outcome": "The project gets submitted, powered by caffeine, fear, and questionable formatting.",
+      "effects": { "health": -10, "money": -3, "grades": 4, "social": -3 }
+      },
+      {
+      "text": "Submit a rough version",
+      "outcome": "It is complete enough to be accepted, but not good enough to make you relax.",
+      "effects": { "health": 1, "money": 0, "grades": -4, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "friendship_drift",
+    "title": "Friendship Drift",
+    "narrative": "You realize you have barely spoken to some friends in weeks. Everyone is busy, but the distance is starting to feel real.",
+    "scenario": "party",
+    "weekRange": [11, 15],
+    "choices": [
+      {
+      "text": "Organize a small meetup",
+      "outcome": "Not everyone can come, but the ones who do remind you that connection still matters.",
+      "effects": { "health": 4, "money": -6, "grades": -2, "social": 8 }
+      },
+      {
+      "text": "Send messages to check in",
+      "outcome": "A few conversations restart. Small effort, meaningful result.",
+      "effects": { "health": 2, "money": 0, "grades": 0, "social": 4 }
+      },
+      {
+      "text": "Leave it for after exams",
+      "outcome": "You promise yourself you will reconnect later. Later keeps getting heavier.",
+      "effects": { "health": -2, "money": 0, "grades": 2, "social": -6 }
+      }
+    ]
+  },
+  {
+    "id": "final_exam_revision",
+    "title": "Final Exam Revision",
+    "narrative": "Final exams are close. Your notes are better than they were at midterms, but the pressure feels much heavier now.",
+    "scenario": "library",
+    "weekRange": [12, 15],
+    "choices": [
+      {
+        "text": "Follow a balanced revision plan",
+        "outcome": "You study consistently and still manage to sleep. A rare and elegant strategy.",
+        "effects": { "health": 2, "money": 0, "grades": 9, "social": -1 }
+      },
+      {
+        "text": "Study all day and night",
+        "outcome": "You cover a lot of material, but your brain starts buffering during basic tasks.",
+        "effects": { "health": -10, "money": -2, "grades": 6, "social": -4 }
+      },
+      {
+        "text": "Focus only on likely topics",
+        "outcome": "Efficient, risky, and very much based on vibes.",
+        "effects": { "health": 1, "money": 0, "grades": 2, "social": 0 }
+      },
+      {
+        "text": "Give up for the evening",
+        "outcome": "You rest, but tomorrow's version of you is already preparing a complaint.",
+        "effects": { "health": 6, "money": 0, "grades": -5, "social": 1 }
+      }
+    ]
+  },
+  {
+    "id": "exam_morning",
+    "title": "Exam Morning",
+    "narrative": "It is the morning of an important exam. Your stomach is doing gymnastics and your brain is replaying random facts from unrelated modules.",
+    "scenario": "dorm",
+    "weekRange": [13, 15],
+    "choices": [
+      {
+        "text": "Eat breakfast and arrive early",
+        "outcome": "You feel nervous but prepared. At least your body is not running exclusively on panic.",
+        "effects": { "health": 4, "money": -3, "grades": 6, "social": 0 }
+      },
+      {
+        "text": "Do last-minute cramming",
+        "outcome": "You remember one extra concept and forget how breathing works.",
+        "effects": { "health": -5, "money": 0, "grades": 2, "social": 0 }
+      },
+      {
+        "text": "Arrive just in time",
+        "outcome": "You make it, but the stress of nearly being late follows you into the exam hall.",
+        "effects": { "health": -4, "money": 0, "grades": -2, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "internship_application",
+    "title": "Internship Application",
+    "narrative": "An internship application deadline appears. It could be great for your future, but your semester is already overloaded.",
+    "scenario": "class",
+    "weekRange": [12, 15],
+    "choices": [
+      {
+        "text": "Apply properly",
+        "outcome": "You spend time improving your CV and writing a decent application. Future you may be grateful.",
+        "effects": { "health": -4, "money": 0, "grades": 3, "social": 1 }
+      },
+      {
+        "text": "Send a rushed application",
+        "outcome": "It is submitted, but the cover letter has the emotional range of a receipt.",
+        "effects": { "health": -1, "money": 0, "grades": 0, "social": 0 }
+      },
+      {
+        "text": "Ignore it",
+        "outcome": "You avoid extra stress now, but lose a possible opportunity.",
+        "effects": { "health": 3, "money": 0, "grades": -1, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "end_of_semester_party",
+    "title": "End-of-Semester Party",
+    "narrative": "Exams are almost over, and everyone is talking about one final party. You are tired, broke, and tempted.",
+    "scenario": "party",
+    "weekRange": [14, 15],
+    "choices": [
+      {
+        "text": "Go all in",
+        "outcome": "The night is memorable, even if some details are reconstructed from photos and group chat evidence.",
+        "effects": { "health": -8, "money": -10, "grades": -2, "social": 10 }
+      },
+      {
+        "text": "Go for a short while",
+        "outcome": "You celebrate without completely destroying tomorrow. Mature? Perhaps.",
+        "effects": { "health": -2, "money": -5, "grades": 0, "social": 5 }
+      },
+      {
+        "text": "Skip it and recover",
+        "outcome": "You miss the fun, but your body sends a thank-you note.",
+        "effects": { "health": 7, "money": 0, "grades": 1, "social": -3 }
+      }
+    ]
+  },
+  {
+    "id": "semester_reflection",
+    "title": "Semester Reflection",
+    "narrative": "The semester is nearly finished. You look back at the choices, compromises, disasters, and tiny victories that got you here.",
+    "scenario": "dorm",
+    "weekRange": [15, 15],
+    "choices": [
+      {
+        "text": "Reflect honestly",
+        "outcome": "You recognize both mistakes and growth. It was messy, but you learned more than grades can show.",
+        "effects": { "health": 4, "money": 0, "grades": 2, "social": 3 }
+      },
+      {
+        "text": "Focus only on what went wrong",
+        "outcome": "You spiral through every bad decision. Reflection becomes self-roasting with extra steps.",
+        "effects": { "health": -6, "money": 0, "grades": 0, "social": -2 }
+      },
+      {
+        "text": "Celebrate surviving",
+        "outcome": "You may not have mastered student life, but you made it through the semester. That counts.",
+        "effects": { "health": 5, "money": -4, "grades": 0, "social": 5 }
       }
     ]
   },
@@ -227,7 +717,6 @@
     "weekRange": [1, 15],
     "type": "injector",
     "condition": { "stat": "money", "below": 15 },
-    "tags": ["crisis", "frugal"],
     "choices": [
       {
         "text": "Call your parents",
@@ -242,68 +731,179 @@
     ]
   },
   {
-    "id": "health_crisis_collapse",
-    "title": "Crash",
-    "narrative": "You physically cannot get out of bed. Your head is pounding, your body aches, and the ceiling is spinning. Weeks of bad sleep, bad food, and bad decisions have finally caught up.",
+    "id": "health_crisis_burnout",
+    "title": "Burnout Warning",
+    "narrative": "You sit down to work, but the words blur together. Your body feels heavy, your patience is gone, and even simple tasks feel impossible.",
     "scenario": "dorm",
-    "weekRange": [1, 15],
+    "weekRange": [5, 15],
     "type": "injector",
-    "condition": { "stat": "health", "below": 15 },
-    "tags": ["crisis", "health"],
+    "condition": { "stat": "health", "below": 20 },
     "choices": [
       {
-        "text": "Force yourself up",
-        "outcome": "You drag yourself vertical through sheer willpower. You make it to your desk but every movement costs you. You need to start taking care of yourself.",
-        "effects": { "health": 5, "money": 0, "grades": -5, "social": 0 }
+        "text": "Take a full recovery day",
+        "outcome": "You step back before things get worse. The work waits, but you finally breathe.",
+        "effects": { "health": 15, "money": 0, "grades": -6, "social": -2 }
       },
       {
-        "text": "Stay in bed all day",
-        "outcome": "Your body wins. You sleep for 14 hours straight, missing everything. When you wake up, you feel slightly more human.",
-        "effects": { "health": 12, "money": 0, "grades": -10, "social": -3 }
+        "text": "Keep pushing",
+        "outcome": "You force yourself through the day, but your mind feels like a browser with forty tabs open and no memory left.",
+        "effects": { "health": -10, "money": 0, "grades": 2, "social": -4 }
+      },
+      {
+        "text": "Ask for help",
+        "outcome": "You contact someone and admit you are struggling. It does not fix everything, but it stops the spiral.",
+        "effects": { "health": 10, "money": 0, "grades": -2, "social": 5 }
       }
     ]
   },
   {
-    "id": "grades_crisis_probation",
+    "id": "grades_crisis_academic_warning",
     "title": "Academic Warning",
-    "narrative": "There's an email from the dean's office. Subject line: 'Academic Performance Concern.' Your grades have dropped below the minimum threshold. You have a mandatory meeting scheduled.",
+    "narrative": "An email from your lecturer appears with the subject line: 'Concern about your progress'. Your soul briefly leaves your body.",
     "scenario": "class",
-    "weekRange": [1, 15],
+    "weekRange": [6, 15],
     "type": "injector",
-    "condition": { "stat": "grades", "below": 15 },
-    "tags": ["crisis", "academic"],
+    "condition": { "stat": "grades", "below": 25 },
     "choices": [
       {
-        "text": "Promise to turn things around",
-        "outcome": "You sit across from the dean and make every promise in the book. They give you a second chance, but you can feel the clock ticking.",
-        "effects": { "health": -5, "money": 0, "grades": 10, "social": -2 }
+        "text": "Book office hours",
+        "outcome": "The meeting is uncomfortable but useful. You finally understand what needs to improve.",
+        "effects": { "health": -2, "money": 0, "grades": 12, "social": 0 }
       },
       {
-        "text": "Ask for extensions on everything",
-        "outcome": "You explain your situation honestly. Some professors grant extensions, others don't. It's not ideal, but it buys you time.",
-        "effects": { "health": -3, "money": 0, "grades": 8, "social": 0 }
+        "text": "Create an emergency study plan",
+        "outcome": "You build a strict plan and commit to catching up. It will not be easy, but it is possible.",
+        "effects": { "health": -6, "money": 0, "grades": 10, "social": -3 }
+      },
+      {
+        "text": "Avoid reading the email again",
+        "outcome": "You close the email and pretend reality has been postponed. It has not.",
+        "effects": { "health": -3, "money": 0, "grades": -8, "social": 0 }
       }
     ]
   },
   {
-    "id": "social_crisis_lonely",
-    "title": "The Empty Phone",
-    "narrative": "It's Friday night. Your phone has zero notifications. No invites, no texts, no tags. Everyone seems to be somewhere, with someone, doing something, and you're alone in your room.",
+    "id": "social_crisis_isolation",
+    "title": "Isolation Spiral",
+    "narrative": "You notice that nobody has messaged you in days. Or maybe they did, and you were too tired to reply. Either way, the silence feels loud.",
     "scenario": "dorm",
-    "weekRange": [1, 15],
+    "weekRange": [4, 15],
     "type": "injector",
-    "condition": { "stat": "social", "below": 15 },
-    "tags": ["crisis", "social"],
+    "condition": { "stat": "social", "below": 20 },
     "choices": [
       {
-        "text": "Force yourself to go out alone",
-        "outcome": "You show up at a campus event by yourself. It's terrifying for the first ten minutes, but then someone says hi. Maybe this is the start of something.",
-        "effects": { "health": -2, "money": -3, "grades": 0, "social": 12 }
+        "text": "Reach out to a friend",
+        "outcome": "The conversation starts awkwardly, but soon feels familiar. You remember you are not as alone as you thought.",
+        "effects": { "health": 4, "money": 0, "grades": 0, "social": 12 }
       },
       {
-        "text": "Stay in and cope",
-        "outcome": "You put on a comfort show and pretend it doesn't bother you. The loneliness doesn't fade, but at least the room is warm.",
-        "effects": { "health": -5, "money": 0, "grades": 2, "social": 3 }
+        "text": "Go to a campus event",
+        "outcome": "It takes effort to show up, but being around people helps more than expected.",
+        "effects": { "health": 2, "money": -4, "grades": -1, "social": 10 }
+      },
+      {
+        "text": "Stay isolated",
+        "outcome": "You avoid discomfort, but the room feels smaller by the hour.",
+        "effects": { "health": -6, "money": 0, "grades": 1, "social": -8 }
+      }
+    ]
+  },
+  {
+    "id": "money_high_treat_yourself",
+    "title": "Treat Yourself?",
+    "narrative": "For once, your finances look stable. A dangerous thought appears: maybe you deserve something nice.",
+    "scenario": "cafe",
+    "weekRange": [5, 15],
+    "type": "injector",
+    "condition": { "stat": "money", "above": 80 },
+    "choices": [
+      {
+        "text": "Buy something useful",
+        "outcome": "You invest in something that genuinely improves your routine. Responsible luxury achieved.",
+        "effects": { "health": 5, "money": -12, "grades": 3, "social": 0 }
+      },
+      {
+        "text": "Go out with friends",
+        "outcome": "You spend more than planned, but the night gives you stories worth keeping.",
+        "effects": { "health": -2, "money": -15, "grades": -1, "social": 9 }
+      },
+      {
+        "text": "Save the money",
+        "outcome": "You resist temptation and keep your safety net intact. Slightly boring, extremely smart.",
+        "effects": { "health": 1, "money": 4, "grades": 0, "social": -1 }
+      }
+    ]
+  },
+  {
+    "id": "grades_high_scholarship",
+    "title": "Scholarship Opportunity",
+    "narrative": "Your strong academic performance makes you eligible for a small scholarship application. The deadline is soon.",
+    "scenario": "class",
+    "weekRange": [8, 15],
+    "type": "injector",
+    "condition": { "stat": "grades", "above": 80 },
+    "choices": [
+      {
+        "text": "Apply carefully",
+        "outcome": "You prepare a strong application. Your effort might pay off beyond grades.",
+        "effects": { "health": -3, "money": 8, "grades": 4, "social": 0 }
+      },
+      {
+        "text": "Submit quickly",
+        "outcome": "You send something acceptable, though not amazing. Still, an opportunity taken is better than one ignored.",
+        "effects": { "health": -1, "money": 3, "grades": 1, "social": 0 }
+      },
+      {
+        "text": "Ignore it",
+        "outcome": "You avoid extra work, but the opportunity passes quietly.",
+        "effects": { "health": 2, "money": 0, "grades": -1, "social": 0 }
+      }
+    ]
+  },
+  {
+    "id": "social_high_support_network",
+    "title": "Support Network",
+    "narrative": "Because you have stayed connected, your friends notice when you seem stressed. One of them offers to help before you even ask.",
+    "scenario": "party",
+    "weekRange": [7, 15],
+    "type": "injector",
+    "condition": { "stat": "social", "above": 80 },
+    "choices": [
+      {
+        "text": "Accept their help",
+        "outcome": "You let someone support you. The week feels lighter, and the friendship feels stronger.",
+        "effects": { "health": 8, "money": 0, "grades": 3, "social": 3 }
+      },
+      {
+        "text": "Thank them but handle it alone",
+        "outcome": "You appreciate the offer, but keep carrying everything yourself. Admirable, but tiring.",
+        "effects": { "health": -3, "money": 0, "grades": 2, "social": -1 }
+      }
+    ]
+  },
+  {
+    "id": "health_high_good_routine",
+    "title": "A Surprisingly Good Routine",
+    "narrative": "Somehow, against all odds, your routine is working. You are sleeping enough, eating decently, and not completely falling apart.",
+    "scenario": "dorm",
+    "weekRange": [6, 15],
+    "type": "injector",
+    "condition": { "stat": "health", "above": 80 },
+    "choices": [
+      {
+      "text": "Maintain the routine",
+      "outcome": "You keep the balance going. It is not exciting, but stability is quietly powerful.",
+      "effects": { "health": 5, "money": 0, "grades": 4, "social": 1 }
+      },
+      {
+      "text": "Use the energy to study harder",
+      "outcome": "You push your advantage academically, but the balance starts to wobble.",
+      "effects": { "health": -5, "money": 0, "grades": 8, "social": -2 }
+      },
+      {
+      "text": "Use the energy to socialize",
+      "outcome": "You reconnect with people and enjoy yourself without completely losing control.",
+      "effects": { "health": -2, "money": -5, "grades": 0, "social": 7 }
       }
     ]
   }
