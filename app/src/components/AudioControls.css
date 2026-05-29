@@ -1,0 +1,28 @@
+.audio-controls-btn {
+  position: absolute;
+  top: 4.75rem;
+  right: var(--space-3);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.audio-controls-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.audio-controls-btn:active {
+  transform: scale(0.97);
+}

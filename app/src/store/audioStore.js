@@ -1,45 +1,80 @@
 /**
  * Audio Store (Zustand)
- * Controls music and SFX volumes, muting, and current track.
+ * Volume, mute, and persistence to localStorage.
  */
 
 import { create } from 'zustand';
 
+const STORAGE_KEY = 'lifepath-audio-prefs';
+
+function loadPrefs() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+function savePrefs(prefs) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+  } catch {
+    /* ignore */
+  }
+}
+
+const saved = loadPrefs();
+
 const useAudioStore = create((set, get) => ({
-  // ── State ──
-  musicVolume: 0.4,
-  sfxVolume: 0.6,
-  isMuted: false,
-  currentTrack: null,     // current background music key
-  isAudioReady: false,    // true after first user interaction unlocks audio
+  musicVolume: saved?.musicVolume ?? 0.3,
+  sfxVolume: saved?.sfxVolume ?? 0.5,
+  isMuted: saved?.isMuted ?? false,
+  currentTrack: null,
+  isAudioReady: false,
 
-  // ── Actions ──
+  setMusicVolume: (volume) => {
+    const v = Math.max(0, Math.min(1, volume));
+    set({ musicVolume: v });
+    savePrefs({ ...getPrefsSnapshot(get()), musicVolume: v });
+  },
 
-  setMusicVolume: (volume) => set({ musicVolume: Math.max(0, Math.min(1, volume)) }),
+  setSfxVolume: (volume) => {
+    const v = Math.max(0, Math.min(1, volume));
+    set({ sfxVolume: v });
+    savePrefs({ ...getPrefsSnapshot(get()), sfxVolume: v });
+  },
 
-  setSfxVolume: (volume) => set({ sfxVolume: Math.max(0, Math.min(1, volume)) }),
-
-  toggleMute: () => set((state) => ({ isMuted: !state.isMuted })),
+  toggleMute: () => {
+    set((state) => {
+      const isMuted = !state.isMuted;
+      savePrefs({ ...getPrefsSnapshot(state), isMuted });
+      return { isMuted };
+    });
+  },
 
   setCurrentTrack: (trackKey) => set({ currentTrack: trackKey }),
 
   setAudioReady: () => set({ isAudioReady: true }),
 
-  /**
-   * Get the effective music volume (considering mute).
-   */
   getEffectiveMusicVolume: () => {
     const { musicVolume, isMuted } = get();
     return isMuted ? 0 : musicVolume;
   },
 
-  /**
-   * Get the effective SFX volume (considering mute).
-   */
   getEffectiveSfxVolume: () => {
     const { sfxVolume, isMuted } = get();
     return isMuted ? 0 : sfxVolume;
   },
 }));
+
+function getPrefsSnapshot(state) {
+  return {
+    musicVolume: state.musicVolume,
+    sfxVolume: state.sfxVolume,
+    isMuted: state.isMuted,
+  };
+}
 
 export default useAudioStore;

@@ -5,6 +5,7 @@
     "narrative": "You've been studying in the library for 3 hours straight. Your brain is fogging up and your phone keeps buzzing with messages from friends heading out tonight.",
     "scenario": "library",
     "weekRange": [1, 15],
+    "tags": ["academic"],
     "choices": [
       {
         "text": "Keep studying",
@@ -21,13 +22,14 @@
   {
     "id": "group_project",
     "title": "The Group Project",
-    "narrative": "Your group project is due tomorrow and your teammates haven't done their parts. The shared doc is painfully empty. Your phone shows three unread messages from them — all excuses.",
+    "narrative": "Your group project is due tomorrow and your teammates haven't done their parts. The shared doc is painfully empty. Your phone shows three unread messages from them, all excuses.",
     "scenario": "library",
     "weekRange": [3, 15],
+    "tags": ["academic", "social"],
     "choices": [
       {
         "text": "Do everything yourself",
-        "outcome": "You stay up all night fixing everything. The project is solid — but you feel completely drained. At least your name is on something decent.",
+        "outcome": "You stay up all night fixing everything. The project is solid, but you feel completely drained. At least your name is on something decent.",
         "effects": { "health": -10, "money": 0, "grades": 12, "social": -3 }
       },
       {
@@ -42,7 +44,7 @@
       },
       {
         "text": "Do nothing and hope for the best",
-        "outcome": "You close the laptop and go to bed. Tomorrow-you can deal with this. Tomorrow-you is going to be very stressed.",
+        "outcome": "You close the laptop and go to bed. Tomorrow you can deal with this. Tomorrow you is going to be very stressed.",
         "effects": { "health": 5, "money": 0, "grades": -10, "social": 0 }
       }
     ]
@@ -53,6 +55,7 @@
     "narrative": "You're at a packed basement party. Music is deafening, drinks are everywhere, and someone just started a very competitive game of beer pong. You have a 9AM class tomorrow.",
     "scenario": "party",
     "weekRange": [1, 15],
+    "tags": ["social", "leisure"],
     "choices": [
       {
         "text": "Stay and own the night",
@@ -72,6 +75,7 @@
     "narrative": "Your alarm is screaming. It's 7:45AM and your lecture starts in 15 minutes. Your bed has never been more comfortable. The attendance sheet is definitely going to be out today.",
     "scenario": "class",
     "weekRange": [1, 15],
+    "tags": ["academic"],
     "choices": [
       {
         "text": "Drag yourself to class",
@@ -91,6 +95,7 @@
     "narrative": "You walk past your favourite campus café and the smell of fresh espresso hits you like a freight train. Your wallet says no, your exhausted brain says absolutely yes.",
     "scenario": "cafe",
     "weekRange": [1, 15],
+    "tags": ["frugal", "leisure"],
     "choices": [
       {
         "text": "Treat yourself",
@@ -110,25 +115,27 @@
     "narrative": "It's midnight. You're in bed, phone inches from your face, deep in a TikTok spiral. You have stuff to do tomorrow. You've had stuff to do tomorrow for the last three hours.",
     "scenario": "dorm",
     "weekRange": [1, 15],
+    "tags": ["health", "leisure"],
     "choices": [
       {
         "text": "Keep scrolling",
-        "outcome": "One more video turns into forty-seven. It's 2AM. You've learned nothing useful but you can now identify every dog breed by sound.",
+        "outcome": "One more video turns into forty seven. It's 2AM. You've learned nothing useful but you can now identify every dog breed by sound.",
         "effects": { "health": -5, "money": 0, "grades": -3, "social": 2 }
       },
       {
         "text": "Put the phone down and sleep",
-        "outcome": "You force yourself to lock the phone and close your eyes. Tomorrow-you will be grateful. Tonight-you is mildly annoyed.",
+        "outcome": "You force yourself to lock the phone and close your eyes. Tomorrow you will be grateful. Tonight you is mildly annoyed.",
         "effects": { "health": 5, "money": 0, "grades": 2, "social": 0 }
       }
     ]
   },
   {
     "id": "part_time_offer",
-    "title": "Part-Time Job Offer",
+    "title": "Part Time Job Offer",
     "narrative": "Your manager at the campus bookstore texts: they need you for extra shifts this week. The pay is decent, but your assignment deadlines are already breathing down your neck.",
     "scenario": "cafe",
     "weekRange": [2, 14],
+    "tags": ["frugal", "crisis"],
     "choices": [
       {
         "text": "Accept the extra hours",
@@ -148,6 +155,7 @@
     "narrative": "Someone hands you another drink at a house party. You've already had a few and things are getting fuzzy. Everyone's watching to see if you'll take it.",
     "scenario": "party",
     "weekRange": [2, 15],
+    "tags": ["social", "health"],
     "choices": [
       {
         "text": "Take it",
@@ -167,6 +175,7 @@
     "narrative": "Your room looks like a crime scene. Clothes everywhere, empty cups forming a small civilization on your desk, and something in the bin that should have been taken out days ago.",
     "scenario": "dorm",
     "weekRange": [1, 15],
+    "tags": ["health"],
     "choices": [
       {
         "text": "Clean up",
@@ -183,9 +192,10 @@
   {
     "id": "pop_quiz",
     "title": "Pop Quiz",
-    "narrative": "The professor walks in with that look on their face. 'Clear your desks — surprise quiz.' You haven't reviewed the material in two weeks. Your neighbour is already writing.",
+    "narrative": "The professor walks in with that look on their face. 'Clear your desks, surprise quiz.' You haven't reviewed the material in two weeks. Your neighbour is already writing.",
     "scenario": "class",
     "weekRange": [3, 13],
+    "tags": ["academic"],
     "choices": [
       {
         "text": "Give it your best shot",
@@ -217,6 +227,7 @@
     "weekRange": [1, 15],
     "type": "injector",
     "condition": { "stat": "money", "below": 15 },
+    "tags": ["crisis", "frugal"],
     "choices": [
       {
         "text": "Call your parents",
@@ -238,6 +249,7 @@
     "weekRange": [1, 15],
     "type": "injector",
     "condition": { "stat": "health", "below": 15 },
+    "tags": ["crisis", "health"],
     "choices": [
       {
         "text": "Force yourself up",
@@ -259,10 +271,11 @@
     "weekRange": [1, 15],
     "type": "injector",
     "condition": { "stat": "grades", "below": 15 },
+    "tags": ["crisis", "academic"],
     "choices": [
       {
         "text": "Promise to turn things around",
-        "outcome": "You sit across from the dean and make every promise in the book. They give you a second chance — but you can feel the clock ticking.",
+        "outcome": "You sit across from the dean and make every promise in the book. They give you a second chance, but you can feel the clock ticking.",
         "effects": { "health": -5, "money": 0, "grades": 10, "social": -2 }
       },
       {
@@ -275,11 +288,12 @@
   {
     "id": "social_crisis_lonely",
     "title": "The Empty Phone",
-    "narrative": "It's Friday night. Your phone has zero notifications. No invites, no texts, no tags. Everyone seems to be somewhere, with someone, doing something — and you're alone in your room.",
+    "narrative": "It's Friday night. Your phone has zero notifications. No invites, no texts, no tags. Everyone seems to be somewhere, with someone, doing something, and you're alone in your room.",
     "scenario": "dorm",
     "weekRange": [1, 15],
     "type": "injector",
     "condition": { "stat": "social", "below": 15 },
+    "tags": ["crisis", "social"],
     "choices": [
       {
         "text": "Force yourself to go out alone",

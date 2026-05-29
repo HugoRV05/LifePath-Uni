@@ -1,0 +1,98 @@
+.stats-hud-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: 10;
+  overflow: visible;
+}
+
+.stat-hud-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: relative;
+  overflow: visible;
+}
+
+.stat-hud-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  position: relative;
+  height: 24px;
+  overflow: visible;
+}
+
+.stat-hud-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-color);
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.stat-hud-icon {
+  stroke-width: 2.5px;
+}
+
+.stat-hud-value {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Stat bar container */
+.stat-hud-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.stat-hud-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+  box-shadow: 0 0 6px var(--accent-color);
+}
+
+/* Stat Floating Toast: positioned below the bar, inside visible area */
+.stat-hud-toast {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-extrabold);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+.toast-positive {
+  color: #4ECB71;
+  text-shadow: 0 1px 4px rgba(78, 203, 113, 0.4);
+}
+
+.toast-negative {
+  color: #FF6B6B;
+  text-shadow: 0 1px 4px rgba(255, 107, 107, 0.4);
+}

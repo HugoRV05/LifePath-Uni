@@ -34,7 +34,7 @@ export const ENDING_FRAGMENTS = {
   health: {
     terrible: {
       label: 'Burnt Out',
-      text: "Your body is a wreck. Months of skipping meals, pulling all-nighters, and ignoring every warning sign have left you running on fumes. The semester broke you physically, and it's going to take a long summer to recover.",
+      text: "Your body is a wreck. Months of skipping meals, pulling all nighters, and ignoring every warning sign have left you running on fumes. The semester broke you physically, and it's going to take a long summer to recover.",
     },
     poor: {
       label: 'Running on Empty',
@@ -56,7 +56,7 @@ export const ENDING_FRAGMENTS = {
     },
     poor: {
       label: 'Scraping By',
-      text: "Money was a constant stress. You made it through, but not without some desperate moments — selling textbooks you still needed, skipping meals to save a few pounds, and checking your bank app with one eye closed.",
+      text: "Money was a constant stress. You made it through, but not without some desperate moments. Selling textbooks you still needed, skipping meals to save a few pounds, and checking your bank app with one eye closed.",
     },
     good: {
       label: 'Financially Stable',
@@ -70,7 +70,7 @@ export const ENDING_FRAGMENTS = {
   grades: {
     terrible: {
       label: 'Academic Disaster',
-      text: "Let's not sugarcoat it — your grades are terrible. Multiple failed modules, missed assignments, and at least one exam you're pretty sure you wrote your name wrong on. The academic review board would like a word.",
+      text: "Let's not sugarcoat it. Your grades are terrible. Multiple failed modules, missed assignments, and at least one exam you're pretty sure you wrote your name wrong on. The academic review board would like a word.",
     },
     poor: {
       label: 'Below Average',
@@ -78,7 +78,7 @@ export const ENDING_FRAGMENTS = {
     },
     good: {
       label: 'Solid Student',
-      text: "You put in the work and it shows. Your grades are respectable — not valedictorian material, but solidly above average. You can hand this transcript to anyone without cringing.",
+      text: "You put in the work and it shows. Your grades are respectable. Not valedictorian material, but solidly above average. You can hand this transcript to anyone without cringing.",
     },
     excellent: {
       label: 'Top of the Class',
@@ -123,7 +123,7 @@ export const COMBO_ENDINGS = [
     title: 'Rock Bottom',
     condition: (stats) =>
       stats.health <= 25 && stats.money <= 25 && stats.grades <= 25 && stats.social <= 25,
-    text: "Everything fell apart. Health, finances, grades, friendships — all of it. This semester was a trainwreck from start to finish. But hey, you survived. That counts for something. Time to start rebuilding.",
+    text: "Everything fell apart. Health, finances, grades, friendships, all of it. This semester was a trainwreck from start to finish. But hey, you survived. That counts for something. Time to start rebuilding.",
     rarity: 'legendary',
   },
   {
@@ -184,12 +184,12 @@ export const COMBO_ENDINGS = [
  * Headline titles based on overall life score.
  */
 const SCORE_HEADLINES = [
-  { min: 0, max: 20, title: 'A Semester to Forget', emoji: '💀' },
-  { min: 21, max: 40, title: 'Rough Around the Edges', emoji: '😬' },
-  { min: 41, max: 55, title: 'Survived the Semester', emoji: '😅' },
-  { min: 56, max: 70, title: 'A Solid Semester', emoji: '😊' },
-  { min: 71, max: 85, title: 'Impressive Performance', emoji: '🎉' },
-  { min: 86, max: 100, title: 'Absolutely Legendary', emoji: '👑' },
+  { min: 0, max: 20, title: 'A Semester to Forget' },
+  { min: 21, max: 40, title: 'Rough Around the Edges' },
+  { min: 41, max: 55, title: 'Survived the Semester' },
+  { min: 56, max: 70, title: 'A Solid Semester' },
+  { min: 71, max: 85, title: 'Impressive Performance' },
+  { min: 86, max: 100, title: 'Absolutely Legendary' },
 ];
 
 /**

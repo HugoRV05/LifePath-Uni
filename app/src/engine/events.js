@@ -1,7 +1,10 @@
 /**
  * Event Engine
- * Handles deck loading, random weekly event drawing, and conditional injector logic.
+ * Handles deck loading, random weekly event drawing, conditional injectors,
+ * and budget-influenced weighted selection.
  */
+
+import { getBudgetById } from './budgets.js';
 
 /**
  * Separate the raw event deck into generic events and conditional injectors.
@@ -48,39 +51,74 @@ export function filterByWeek(genericEvents, currentWeek) {
  */
 export function checkInjectors(injectors, stats, usedEventIds) {
   return injectors.filter((injector) => {
-    // Don't re-trigger an injector already seen
     if (usedEventIds.has(injector.id)) return false;
-
     const { stat, below } = injector.condition;
     return stats[stat] < below;
   });
 }
 
 /**
- * Draw a random number of events for a week.
+ * Perform a weighted random selection from an array of { item, weight } entries.
+ * Returns `count` unique items without replacement.
  *
- * Week event count distribution:
- * - Normal weeks: 2-4 events (weighted toward 3)
- * - Midterm week (7-8): 3-5 events
- * - Finals week (14-15): 4-5 events
+ * @param {Array<{item: Object, weight: number}>} weighted - Weighted items
+ * @param {number} count - Number of items to draw
+ * @returns {Array} Selected items
+ */
+export function weightedDraw(weighted, count) {
+  const results = [];
+  const pool = [...weighted];
+
+  for (let i = 0; i < count && pool.length > 0; i++) {
+    const totalWeight = pool.reduce((sum, entry) => sum + entry.weight, 0);
+    let roll = Math.random() * totalWeight;
+
+    for (let j = 0; j < pool.length; j++) {
+      roll -= pool[j].weight;
+      if (roll <= 0) {
+        results.push(pool[j].item);
+        pool.splice(j, 1);
+        break;
+      }
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Draw events for a week using budget-weighted selection.
+ * Events that share tags with the active budget get 2x draw weight.
+ * Events without tags or with a "balanced" budget (no tags) draw at normal weight.
  *
  * @param {Array} eligibleEvents - Events eligible for this week
  * @param {number} currentWeek - Current week number
  * @param {Set} usedEventIds - Set of event IDs already seen
+ * @param {string} [budgetId] - Active budget preset ID for weighted drawing
  * @returns {Array} Selected events for this week
  */
-export function drawWeeklyEvents(eligibleEvents, currentWeek, usedEventIds) {
-  // Filter out already-used events
+export function drawWeeklyEvents(eligibleEvents, currentWeek, usedEventIds, budgetId) {
   const available = eligibleEvents.filter((e) => !usedEventIds.has(e.id));
-
   if (available.length === 0) return [];
 
-  // Determine event count based on week
   const count = getWeekEventCount(currentWeek);
+  const budget = budgetId ? getBudgetById(budgetId) : null;
+  const budgetTags = budget?.tags || [];
 
-  // Shuffle and take
-  const shuffled = shuffleArray([...available]);
-  return shuffled.slice(0, Math.min(count, shuffled.length));
+  // If no budget tags, do a simple shuffle draw
+  if (budgetTags.length === 0) {
+    const shuffled = shuffleArray([...available]);
+    return shuffled.slice(0, Math.min(count, shuffled.length));
+  }
+
+  // Build weighted pool: matching events get 2x weight
+  const weighted = available.map((event) => {
+    const eventTags = event.tags || [];
+    const hasOverlap = eventTags.some((tag) => budgetTags.includes(tag));
+    return { item: event, weight: hasOverlap ? 2 : 1 };
+  });
+
+  return weightedDraw(weighted, Math.min(count, available.length));
 }
 
 /**
@@ -90,13 +128,9 @@ export function drawWeeklyEvents(eligibleEvents, currentWeek, usedEventIds) {
  * @returns {number} Number of events
  */
 export function getWeekEventCount(week) {
-  // Finals weeks: heavy load
   if (week >= 14) return randomInt(4, 5);
-  // Midterm weeks: above average
   if (week >= 7 && week <= 8) return randomInt(3, 5);
-  // First week: orientation, lighter
   if (week === 1) return randomInt(2, 3);
-  // Normal weeks
   return randomInt(2, 4);
 }
 
@@ -107,18 +141,15 @@ export function getWeekEventCount(week) {
  * @param {Object} deck - { generic, injectors } from partitionDeck
  * @param {number} currentWeek - Current week
  * @param {Object} stats - Current player stats
- * @param {Set} usedEventIds - Already-seen event IDs
+ * @param {Set} usedEventIds - Already seen event IDs
+ * @param {string} [budgetId] - Active budget for weighted event selection
  * @returns {Array} Ordered event queue for the week
  */
-export function buildWeekQueue(deck, currentWeek, stats, usedEventIds) {
-  // Check for crisis injectors first
+export function buildWeekQueue(deck, currentWeek, stats, usedEventIds, budgetId) {
   const triggeredInjectors = checkInjectors(deck.injectors, stats, usedEventIds);
-
-  // Draw normal events
   const eligible = filterByWeek(deck.generic, currentWeek);
-  const normalEvents = drawWeeklyEvents(eligible, currentWeek, usedEventIds);
+  const normalEvents = drawWeeklyEvents(eligible, currentWeek, usedEventIds, budgetId);
 
-  // Injectors go first (they're urgent crises)
   return [...triggeredInjectors, ...normalEvents];
 }
 
