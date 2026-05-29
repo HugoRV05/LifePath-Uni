@@ -65,7 +65,7 @@ export default function BudgetPicker() {
                 {locked ? <Lock size={14} /> : <IconComponent size={14} />}
               </div>
               <span className="budget-card-name">{budget.name}</span>
-              {locked && <span className="budget-card-min-cost">Needs {budget.minMoney}</span>}
+              {locked && <span className="budget-card-min-cost">Needs ${budget.minMoney}</span>}
             </div>
             {isSelected && !locked && (
               <div className="budget-card-checked">
