@@ -7,10 +7,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.png', 'backgrounds/**/*', 'audio/**/*', 'icons/**/*'],
-      manifest: false,
+      includeAssets: [], // Empty to prevent duplicate precache entries since globPatterns matches everything
+      manifest: false,   // Uses our manual public/manifest.json file
       workbox: {
-        globPatterns: ['**/*.{js,css,html,json,png,jpg,jpeg,svg,wav,woff2}'],
+        globPatterns: ['**/*.{js,css,html,json,png,jpg,jpeg,svg,mp3,woff2}'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -29,7 +29,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|wav)$/i,
+            urlPattern: /\.(?:png|jpg|jpeg|svg|wav|mp3)$/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'static-assets',
